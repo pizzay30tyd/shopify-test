@@ -1,5 +1,7 @@
 {%comment%} w {%endcomment%}
-{% assign description = 'hi testing liquid objects will this work' %}
+{% assign description1 | desc1 = 'hi testing liquid objects will this work' %}
+{% assign description1 | desc2 = 'hi testing liquid objects will this work TWO' %}
+
 {% assign title = 'hi welcome' %}
 
 <div class = "index full-width">
@@ -7,8 +9,8 @@
         <div>
             <h1 class = "index-welcome">{{title}}!</h1>
 
-            <p class = "index-description">{{description}}</p>
-            <p class = "index-description">baojw</p>
+            <p class = "index-description">{% content_for 'block', type: 'text', id: 'desc1'%}</p>
+            <p class = "index-description">  {% content_for 'block', type: 'text', id: 'desc2'%}</p>
             <p class = "index-description-colored">test</p>
 
             
@@ -16,10 +18,12 @@
         </div>
     </div>
 
+    {% unless request.design_mode %}
+
     <div class = "image">
     <img src ="{{'highlyrelevantimage.png' | asset_url}}" width="300" height="300">
     </div>
-
+    {% endunless %}
 
     <div class = "link"> <p>{{'Youtube' | link_to: 'www.youtube.com'}}</p> </div>
 
