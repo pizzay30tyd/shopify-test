@@ -1,0 +1,55 @@
+{%comment%} w {%endcomment%}
+{% assign description = 'hi testing liquid objects will this work' %}
+{% assign title = 'hi welcome' %}
+
+<div class = "index full-width">
+    <div class = "index-content">
+        <div>
+            <h1 class = "index-welcome">{{title}}!</h1>
+
+            <p class = "index-description">{{description}}</p>
+            <p class = "index-description">baojw</p>
+            <p class = "index-description-colored">test</p>
+
+            
+
+        </div>
+    </div>
+
+    <div class = "image">
+    <img src ="{{'highlyrelevantimage.png' | asset_url}}" width="300" height="300">
+    </div>
+
+
+    <div class = "link"> <p>{{'Youtube' | link_to: 'www.youtube.com'}}</p> </div>
+
+
+
+
+</div>
+
+
+
+{% stylesheet %}
+.index{
+    display: grid;
+    padding: 48px, 0;
+
+
+}
+.index-content{
+    display: flex;
+}
+
+.image{
+
+}
+.link{
+
+}
+{% endstylesheet %}
+
+
+{% schema %}
+
+{% endschema %}
